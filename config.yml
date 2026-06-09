@@ -1,0 +1,10 @@
+database:
+  driverClass: org.postgresql.Driver
+  user: prathistha
+  password: pandey@10
+  url: jdbc:postgresql://localhost:4000/myapp_db
+
+server:
+  applicationConnectors:
+    - type: http
+      port: 8080
