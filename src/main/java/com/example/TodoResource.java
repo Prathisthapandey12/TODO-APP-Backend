@@ -45,4 +45,15 @@ public class TodoResource {
         existingTodo.setCompleted(newStatus);
         return existingTodo;
     }
+    @DELETE
+    @Path("/{id}")
+    public Todo deleteTodo(@PathParam("id") long id) {
+        Todo existingTodo = todoDAO.findById(id);
+        
+        if (existingTodo == null) {
+            throw new WebApplicationException("Todo task not found");
+        }
+        todoDAO.deleteById(id);
+        return existingTodo;
+    }
 }

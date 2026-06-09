@@ -25,4 +25,7 @@ public interface TodoDAO {
 
     @SqlUpdate("UPDATE todos SET completed = :completed WHERE id = :id")
     void updateStatus(@Bind("id") long id, @Bind("completed") boolean completed);
+
+    @SqlUpdate("DELETE FROM todos WHERE id = :id")
+    void deleteById(@Bind("id") long id);
 }
